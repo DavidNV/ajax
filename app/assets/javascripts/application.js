@@ -13,3 +13,16 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+$(document).ready(function() {
+  $(".destroy").on('click', function(){
+    var id = $(this).attr("id")
+    $.ajax({
+      url: "/tasks/" + id,
+      type: "DELETE",
+      success: function(response) {
+      }
+    })
+  })
+})
